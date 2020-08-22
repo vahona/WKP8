@@ -1,4 +1,4 @@
-console.log('work');
+
 
 // Object for the song
 
@@ -13,6 +13,8 @@ const formList = document.querySelector('form');
 // fuction to generate the information of the singer
 
 const giveInfoOfSinger = () => {
+
+  // The html 
   const html = singers.map(singer => {
     return `
           <ul class="infolist">
@@ -28,7 +30,7 @@ const giveInfoOfSinger = () => {
               ${singer.legth}
             </li>
             <li class="table_score">
-              Score: 0
+              Score: 0 
             </li>
             <li>
               <button class="plus_button">+1</button>
@@ -52,6 +54,7 @@ const addSinger = e => {
   e.preventDefault();
   const listForm = e.currentTarget;
 
+// Adding the new list of singer
 
   const newSinger = {
     title : listForm.title.value,
@@ -82,16 +85,14 @@ const handleClick = e => {
     deleletSinger(id);
     console.log(id);
   }
+//function for adding the score
 
-  const plusBtn = e.target.closest('button.plus_button');
-
-    if(plusBtn) {
-      const number = scores.reduce((acc, score) => {
-      if(acc[score.id]){
-        acc[score.id]++
-      }
-      })
-    }
+  const pulsBtn = e.target.matches('button.plus_button');
+    
+  if(pulsBtn) {
+    const number = e.target.closest('.table_score');
+    
+  }
 
  
 }
@@ -106,7 +107,7 @@ const deleletSinger = id => {
   infoSinger.dispatchEvent(new CustomEvent('listUpdated'));
 }
 
-// Fucton for the localStorage
+// Fuction for the localStorage
 
 const originLocalStorage = () => {
   const infoListSinger = JSON.parse(localStorage.getItem('singers'));
