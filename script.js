@@ -20,15 +20,15 @@ const giveInfoOfSinger = () => {
                <img src="${singer.picture}" alt="">
             </li>
             <li class="table_musicstyle_name">
-              ${singer.title} <br>
+             <strong> ${singer.title}</strong> <br>
               ${singer.style}
             </li>
             <li class="table_name_of_artist">
-              ${singer.name} <br>
+              <strong>${singer.name}</strong> <br>
               ${singer.legth}
             </li>
             <li class="table_score">
-              Score: 
+              Score: 0
             </li>
             <li>
               <button class="plus_button">+1</button>
@@ -106,6 +106,24 @@ const deleletSinger = id => {
   infoSinger.dispatchEvent(new CustomEvent('listUpdated'));
 }
 
+// Fucton for the localStorage
+
+const originLocalStorage = () => {
+  const infoListSinger = JSON.parse(localStorage.getItem('singers'));
+
+  if (infoListSinger) {
+    singers = infoListSinger;
+  }
+
+  infoSinger.dispatchEvent(new CustomEvent('listUpdated'));
+};
+
+const newLocalStorage = () => {
+  localStorage.setItem('singers', JSON.stringify(singers));
+}
+
+
+
 // Event listener of the delete button
 infoSinger.addEventListener('click', handleClick);
 
@@ -113,6 +131,10 @@ infoSinger.addEventListener('click', handleClick);
 formList.addEventListener('submit', addSinger);
 infoSinger.addEventListener('listUpdated', giveInfoOfSinger)
 
+// Event listener fo local storage
 
-  
+infoSinger.addEventListener('listUpdated', newLocalStorage);
+
+
+originLocalStorage();
 
