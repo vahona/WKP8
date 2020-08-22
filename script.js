@@ -17,7 +17,7 @@ const giveInfoOfSinger = () => {
     return `
           <ul class="infolist">
             <li class="image">
-               <img src="">
+               <img src="${singer.picture}" alt="">
             </li>
             <li class="table_musicstyle_name">
               ${singer.title} <br>
@@ -28,7 +28,7 @@ const giveInfoOfSinger = () => {
               ${singer.legth}
             </li>
             <li class="table_score">
-              Score : 10
+              Score: 
             </li>
             <li>
               <button class="plus_button">+1</button>
@@ -82,7 +82,24 @@ const handleClick = e => {
     deleletSinger(id);
     console.log(id);
   }
-};
+
+  const plusBtn = e.target.closest('button.plus_button');
+
+    if(plusBtn) {
+      const number = scores.reduce((acc, score) => {
+      if(acc[score.id]){
+        acc[score.id]++
+      }
+      })
+    }
+
+ 
+}
+
+
+
+
+
 
 const deleletSinger = id => {
   singers = singers.filter(singer => singer.id !== id);
