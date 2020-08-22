@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hit parade</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main>
+    <table>
+      <tr>
+        <td>
+          <h1>
+            Hit Parade
+          </h1>
+        </td>
+        <td>
+          <div class=" reset_song">
+              <fieldset class="field_reset">
+                <label for="search">Search a song</label><br>
+                <input type="text" id="search" name="title" value="Enter a song title ..." required>
+              </fieldset>
+              <fieldset class="field_reset">
+                <label for="song-stylse">Song title</label><br>
+                <select form="dropDown" id="song-styles" name="style" required>
+                  <option value="">Electronic Dance Music</option>
+                  <option value="">Rock Music</option>
+                  <option value=""> Jazz</option>
+                  <option value="">Dubstep</option>
+                  <option value="">Rhythm and Blues</option>
+                  <option value="">Tecno</option>
+                  <option value="">Country Music</option>
+                  <option value="">Electro</option>
+                  <option value="">Indie Rock</option>
+                  <option value="">Pop music</option>
+                </select>
+              </fieldset>
+              <button class="reset_button"> reset filters </button>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="hit_parade">
+            <h2> Add a song </h2>
+            <form action="adding" class="adding_song">
+              <fieldset>
+                <label for="title">Song title</label><br>
+                <input type="text" id="title" name="title" value="Title" class="song_title" required>
+              </fieldset>
+              <fieldset>
+                <label for="name">Artist Name</label><br>
+                <input type="text" id="name" name="title" value="Artist Name" required>
+              </fieldset>
+              <fieldset>
+                <label for="songstyle">Song style</label><br>
+                <select form="dropDown" id="songstyle" name="style" required>
+                  <option value="">Electronic Dance Music</option>
+                  <option value="">Rock Music</option>
+                  <option value=""> Jazz</option>
+                  <option value="">Dubstep</option>
+                  <option value="">Rhythm and Blues</option>
+                  <option value="">Tecno</option>
+                  <option value="">Country Music</option>
+                  <option value="">Electro</option>
+                  <option value="">Indie Rock</option>
+                  <option value="">Pop music</option>
+                </select>
+              </fieldset>
+              <fieldset>
+                <label for="legth">Song legth</label><br>
+                <input type="text" id="legth" name="song legth" value="Legth" required>
+              </fieldset>
+              <fieldset>
+                <label for="picture">Artist picture</label><br>
+                <input type="text" id="picture" value="url of an artist picture" name="artist picture" required>
+              </fieldset>
+              <button class="add-buttom">Add</button>
+            </form>
+          </div>
+        </td>
+        <td class="table_for_input_value">
+        </td>
+      <tr>
+    </table>
+  </main>
+<script src="script.js"></script>
+</body>
+
+</html>
