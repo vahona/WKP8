@@ -35,7 +35,7 @@ const giveInfoOfSinger = () => {
             </li>
             <li>
               <button class = "delete-btn" data-song="${singer.id}">
-                <img src="./assets/delete.png" alt="delete">
+                <img src="./assets/delete.png" alt="Delete ${singer.title}">
               </button>
             </li>
           </ul>`
@@ -59,6 +59,7 @@ const addSinger = e => {
     style: listForm.style.value,
     legth: listForm.legth.value,
     picture: listForm.picture.value,
+    id: Date.now(),
     
   };
   
@@ -70,9 +71,26 @@ const addSinger = e => {
 }
 
 
-// Delete button
 
 
+// Function delete button
+
+const handleClick = e => {
+  const deleteBtn = e.target.closest('button.delete-btn');
+  if(deleteBtn) {
+    const id = Number(deleteBtn.dataset.song);
+    deleletSinger(id);
+    console.log(id);
+  }
+};
+
+const deleletSinger = id => {
+  singers = singers.filter(singer => singer.id !== id);
+  infoSinger.dispatchEvent(new CustomEvent('listUpdated'));
+}
+
+// Event listener of the delete button
+infoSinger.addEventListener('click', handleClick);
 
 // Event listener which generate the new singer
 formList.addEventListener('submit', addSinger);

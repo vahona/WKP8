@@ -91,10 +91,8 @@ li {
 
 
 .infolist {
-    background-color: white;
     top: 0;
     padding: 1rem;
-    border-radius: 5px;
     list-style: none;
     display: flex;
 }
@@ -106,4 +104,8 @@ li {
 
 .table_for_input_value {
     display: block;
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 1.3rem;
 }
+
