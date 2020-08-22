@@ -2,7 +2,7 @@ console.log('work');
 
 // Object for the song
 
-let singers = []
+let singers = [];
 
 // Grabe some element from html 
 
@@ -16,6 +16,9 @@ const giveInfoOfSinger = () => {
   const html = singers.map(singer => {
     return `
           <ul class="infolist">
+            <li class="image">
+               <img src="">
+            </li>
             <li class="table_musicstyle_name">
               ${singer.title} <br>
               ${singer.style}
@@ -31,7 +34,9 @@ const giveInfoOfSinger = () => {
               <button class="plus_button">+1</button>
             </li>
             <li>
-              <img src="assets/delete.png" alt="delete">
+              <button class = "delete-btn" data-song="${singer.id}">
+                <img src="./assets/delete.png" alt="delete">
+              </button>
             </li>
           </ul>`
   }).join('');
@@ -41,7 +46,7 @@ const giveInfoOfSinger = () => {
 };
 
 giveInfoOfSinger()
-
+// Function for adding information of the song
 const addSinger = e => {
 
   e.preventDefault();
@@ -63,6 +68,11 @@ const addSinger = e => {
   listForm.reset();
   console.log(singers);
 }
+
+
+// Delete button
+
+
 
 // Event listener which generate the new singer
 formList.addEventListener('submit', addSinger);
