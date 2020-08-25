@@ -1,3 +1,39 @@
+## Report of the code
+
+### Structure of my code
+
+-   I creat an empty object. 
+-   I grabe some of the element which I need.
+-   giveInfoOfSinger function which generate the html to show the list of the song.
+-   addSinger function to add the singer list.
+-   handleClick function define the the button which delete the song when it not need to be seen.
+-   originLocalStorage function to store the song in computer storage code.
+-   In the buttom on the code all the event listener which listen the functions.
+
+### More time
+
+-  If I had more time I would probably, work on my addscore button.
+-  Then I would try to do the left of the code which I have not finish yet.
+
+### Learn anything new
+
+
+
+### Most challeging
+
+-   The most challeging part for me was the to generate the newlist of song into the html
+-   Also, to add the score of the singer which I coul not finish.
+
+### Specific explanation
+
+
+
+### Other comment
+
+
+
+
+
 # WKP8
 
 Hello team! Here's the weekend project 8.

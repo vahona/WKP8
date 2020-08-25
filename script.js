@@ -1,6 +1,6 @@
 
 
-// Object for the song
+// Empty object for the song
 
 let singers = [];
 
@@ -30,10 +30,10 @@ const giveInfoOfSinger = () => {
               ${singer.legth}
             </li>
             <li class="table_score">
-              Score: 0 
+              Score:<input id="number"  style ="border:none" value =" 0" />
             </li>
             <li>
-              <button class="plus_button">+1</button>
+              <button class="plus_button" >+1</button>
             </li>
             <li>
               <button class = "delete-btn" data-song="${singer.id}">
@@ -90,8 +90,15 @@ const handleClick = e => {
   const pulsBtn = e.target.matches('button.plus_button');
     
   if(pulsBtn) {
-    const number = e.target.closest('.table_score');
-    
+    const id = e.target.closest('.table_score');
+
+    function increasScore () {
+      var value = parseInt(document.getElementById('number').value, 10);
+      value = isNaN(value) ? 0 : value;
+      value++;
+      document.getElementById('number').value = value;
+    }
+    increasScore()
   }
 
  
